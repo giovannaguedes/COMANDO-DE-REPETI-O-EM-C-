@@ -1,0 +1,66 @@
+LOOPING COMMAND IN C
+
+The code below shows how to create a C program that uses loops to iterate over hosts.
+
+⚠️ For educational purposes only • Developed by M!ss s3c
+
+📝 Step-by-step guide: Creating and running your program
+
+1. Create the program file
+
+In the terminal, type:
+
+nano program.c
+
+
+Add the following code:
+
+#include <stdio.h>
+
+int main(int argc, char *argv[]){
+    int i;
+
+    if(argc < 2) {
+        printf("Usage: ./program 192.168.0 \n");
+    } else {
+        for(i = 0; i <= 10; i++){
+            printf("Scanning Host %s.%i  \n", argv[1], i);
+        }
+    }
+
+    return 0;
+}
+
+2. Compile the program
+
+In the terminal, type:
+
+gcc program.c -o program
+
+
+gcc → C compiler.
+
+-o program → name of the generated executable.
+
+3. Run the program
+./program 192.168.0
+
+4. Example output
+Scanning Host 192.168.0.0
+Scanning Host 192.168.0.1
+Scanning Host 192.168.0.2
+Scanning Host 192.168.0.3
+...
+Scanning Host 192.168.0.10
+
+👉 What you learned here
+
+argc and argv → capture arguments passed through the terminal.
+
+if() → allows conditional execution of code.
+
+for loop → repeats a block of code multiple times.
+
+printf() → prints information to the screen.
+
+Combining terminal arguments with loops allows automating repetitive tasks, such as scanning hosts.
